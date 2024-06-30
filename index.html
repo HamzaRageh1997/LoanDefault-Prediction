@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Default Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: hsl(0, 100%, 100%);
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        form label {
+            width: 200px;
+            margin-bottom: 35px;
+            font-weight: normal;
+            color: #0a0a0a;
+        }
+
+        form input[type="number"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 40px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        form input[type="submit"] {
+            display: block;
+            width: 100px;
+            padding: 10px;
+            background-color: #4c74af;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #3797a8;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .wrapper{
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background: #e2e2e2;
+        }
+        .Predicted{
+            background: #3797a8;
+            width: 500px;
+            padding: 10px;
+            border-radius: 80px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(10, 197, 66);">
+    <h1><center>Loan Default Prediction</center></h1>
+
+    <form method="post" class="wrapper">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" required>
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" id="loan_amount" name="loan_amount" required>
+        <label for="credit_score">Credit Score:</label>
+        <input type="number" id="credit_score" name="credit_score" required>
+        <label for="months_employed">Months Employed:</label>
+        <input type="number" id="months_employed" name="months_employed" required>
+        <label for="num_credit_lines">Number of Credit Lines:</label>
+        <input type="number" id="num_credit_lines" name="num_credit_lines" required>
+        <label for="loan_term">Loan Term:</label>
+        <input type="number" id="loan_term" name="loan_term" required>
+        <label for="education_num">Education Number:</label>
+        <input type="number" id="education_num" name="education_num" required>
+        <label for="loan_purpose_num">Loan Purpose Number:</label>
+        <input type="number" id="loan_purpose_num" name="loan_purpose_num" required>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+    <h2 class="Predicted" style="color: #ffffff;">Prediction Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
